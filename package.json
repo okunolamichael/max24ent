@@ -12,6 +12,7 @@
   "dependencies": {
     "@custom-react-hooks/all": "^1.5.1",
     "@tailwindcss/vite": "^4.0.9",
+    "appwrite": "^17.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-use": "^17.6.0",
