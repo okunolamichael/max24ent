@@ -63,27 +63,27 @@ const App = () => {
     }
   };
 
-  // const loadTrendingMovies = async () => {
-  //   try {
-  //     const movies = await getTrendingMovies();
-  //     setTrendingMovies(movies);
-  //   } catch (error) {
-  //     console.error(`Error loading trending movies: ${error}`);
-  //   }
-  // };
+  const loadTrendingMovies = async () => {
+    try {
+      const movies = await getTrendingMovies();
+      setTrendingMovies(movies);
+    } catch (error) {
+      console.error(`Error loading trending movies: ${error}`);
+    }
+  };
 
  // Initial load and search effect
  
- const loadTrendingMovies = async () => {
-  try {
-    const movies = await getTrendingMovies();
-    // Ensure we set an array even if the response is unexpected
-    setTrendingMovies(Array.isArray(movies) ? movies : []);
-  } catch (error) {
-    console.error('Error loading trending movies:', error);
-    setTrendingMovies([]); // Set empty array on error
-  }
-};
+//  const loadTrendingMovies = async () => {
+//   try {
+//     const movies = await getTrendingMovies();
+//     // Ensure we set an array even if the response is unexpected
+//     setTrendingMovies(Array.isArray(movies) ? movies : []);
+//   } catch (error) {
+//     console.error('Error loading trending movies:', error);
+//     setTrendingMovies([]); // Set empty array on error
+//   }
+// };
  
  useEffect(() => {
   fetchMovies(debouncedSearchTerm);
@@ -109,7 +109,7 @@ useEffect(() => {
         </header>
 
 
-        {/* {trendingMovies.length > 0 && (
+        {trendingMovies.length > 0 && (
           <section className='trending'>
             <h2>Trending Movies</h2>
 
@@ -117,13 +117,14 @@ useEffect(() => {
               {trendingMovies.map((movie, index) => (
                 <li key={movie.$id}>
                   <p>{index + 1}</p>
+                  <img src={movie.poster_url} alt={movie.title} />
                 </li>
               ))}
             </ul>
           </section>
-        )} */}
+        )}
 
-{(trendingMovies && trendingMovies.length > 0) && (
+{/* {(trendingMovies && trendingMovies.length > 0) && (
   <section className='trending'>
     <h2>Trending Movies</h2>
     <ul>
@@ -134,7 +135,7 @@ useEffect(() => {
       ))}
     </ul>
   </section>
-)}
+)} */}
 
         <section className='all-movies'>
           <h2>All Movies</h2>
